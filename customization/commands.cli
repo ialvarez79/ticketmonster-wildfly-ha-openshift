@@ -16,7 +16,7 @@ module add --name=org.apache.commons.configuration --resources=/opt/jboss/wildfl
 /subsystem=datasources/jdbc-driver=postgres:add(driver-name=postgres, driver-module-name=org.postgresql, driver-class-name=org.postgresql.Driver)
 
 #Add Datasource
-data-source add --name=helloworldDS --jndi-name=java:jboss/datasources/helloworldDS --driver-name=postgres --connection-url=jdbc:postgresql://${postgres.host:bd01}:${postgres.port:5432}/helloworld --user-name=poc-hg --password=poc-hg --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter --validate-on-match=true --background-validation=true
+data-source add --name=helloworldDS --jndi-name=java:jboss/datasources/helloworldDS --driver-name=postgres --connection-url=jdbc:postgresql://${postgres.host:bd01}:${postgres.port:5432}/helloworld --user-name=${postgres.user} --password=${postgres.password} --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter --validate-on-match=true --background-validation=true
 
 #Execute the batch
 run-batch
