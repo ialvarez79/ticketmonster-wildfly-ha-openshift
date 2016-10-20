@@ -12,7 +12,7 @@ USER root
 RUN chmod +x /opt/jboss/wildfly/customization/execute.sh
 RUN /opt/jboss/wildfly/customization/execute.sh standalone standalone-ha.xml
 
-ADD ticket-monster.war /opt/jboss/wildfly/standalone/deployments/
+ADD helloworld-ear.ear /opt/jboss/wildfly/standalone/deployments/
 
 # Fix for Error: Could not rename /opt/jboss/wildfly/standalone/configuration/standalone_xml_history/current
 RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history
